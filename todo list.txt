@@ -1,0 +1,5 @@
+		TODO-LIST WEB APP WITH DJANGO
+	>> Home Page
+	            >>> btn -- creating to-do
+	            >>> btn -- to  to-dos pages	
+ 	            >>> btn -- to days to-do	

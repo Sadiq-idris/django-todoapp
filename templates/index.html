@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock%}
+
+{% block content %}
+    <div class="container">
+        <div class="main">
+            <div class="logo">
+                <h1>YOLA-TODO-WEB-APP</h1>
+            </div>
+            <div class="button">
+                <a href="{% url 'create_todo' %}" class="btn create">Create todo</a>
+                <a href="{% url 'list_todos' %}" class="btn list">List of todos</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

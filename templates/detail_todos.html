@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Detail-Todos{% endblock%}
+
+{% block content %}
+    <div class="contain">
+        <div class="li">
+            <div class="head">
+                <h2>{{ info.title }}</h2>
+                <span class="del-info"><a href="{% url 'delete_info' info.id %}">Delete</a></span>
+            </div>
+            <div class="list-todo">
+                <div>
+                    <h3>Todo-List</h3>
+                    <ul>
+                        {% for todo in info.todos.all %}
+                            <li>
+                                {{ todo.todo_content }}
+                                <a href="{% url 'delete_todo' todo.id %}" class="del">Delete</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="todo">
+                    <form method='POST' class="form">
+                        {% csrf_token %}
+                        {{ form }}
+                        <input type="submit" value="Add" class="btn-add">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

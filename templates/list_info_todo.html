@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}List Of Todo Info{% endblock%}
+
+{% block content %}
+    <div class="list">
+        <div class="head">
+            <h2>List Of Todos</h2>
+        </div>
+        <div class="main-info">
+            {% for info in object_list %}
+                <div class="info">
+                    <div class="thumbnail">
+                        <img src="{{ info.thumbnail.url }}" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3><a href="{% url 'todos_detail' info.id %}">{{ info.title }}</a></h3>
+                        <small>{{ info.date_time }}</small>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
